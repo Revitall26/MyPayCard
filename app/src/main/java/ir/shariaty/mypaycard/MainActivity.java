@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imgphone;
     ImageView imgGhabz;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             imgphone=findViewById(R.id.img1);
-            imgGhabz=findViewById(R.id.img5);
+            imgGhabz=findViewById(R.id.img2);
 
 
             imgphone.setOnClickListener(new View.OnClickListener() {
