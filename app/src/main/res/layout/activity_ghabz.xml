@@ -8,6 +8,7 @@
     android:background="#8D434763"
 
     tools:context=".GhabzActivity">
+
     <TextView
         android:id="@+id/tvsabet"
         android:layout_width="wrap_content"
@@ -17,9 +18,10 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.763"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/sabet"
@@ -31,25 +33,22 @@
         android:maxLength="11"
         android:text="021"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
-        android:id="@+id/btnsabet"
+        android:id="@+id/btnstelam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="268dp"
         android:backgroundTint="#2D29A6"
         android:text="استعلام"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/animation_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/lblaMidTerm"

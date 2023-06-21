@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import ir.shariaty.mypaycard.databinding.ActivityGhabzBinding;
+import ir.shariaty.mypaycard.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView imgphone;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
             imgphone=findViewById(R.id.img1);
             imgGhabz=findViewById(R.id.img2);
 
+        ActivityGhabzBinding binding;
+        ActivityMainBinding binding1;
 
             imgphone.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -38,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent=new Intent(MainActivity.this,GhabzActivity.class);
                     startActivity(intent);
-                    finish();
+
                 }
             });
 

@@ -1,6 +1,6 @@
 package ir.shariaty.mypaycard;
 
-import static java.lang.System.load;
+//import static java.lang.System.load;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import ir.shariaty.mypaycard.databinding.ActivityGhabzBinding;
+import ir.shariaty.mypaycard.databinding.ActivityMainBinding;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -38,16 +39,20 @@ public class GhabzActivity extends AppCompatActivity {
 
 
     ActivityGhabzBinding binding;
+    ActivityMainBinding binding1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ghabz);
-        binding.btnsabet.setOnClickListener(new View.OnClickListener() {
+        binding=ActivityGhabzBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.btnstelam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String LandlineNo = binding.sabet.getText().toString();
-
+                callAPI(LandlineNo);
             }
         });
     }
@@ -57,17 +62,20 @@ public class GhabzActivity extends AppCompatActivity {
             try {
                 object.put("FixedLineNumber", landlineNo);
             } catch (Exception e) {
+
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
             RequestBody requestBody = RequestBody.create(object.toString(), JSON);
             Request request = new Request.Builder().url("https://charge.sep.ir/Inquiry/FixedLineBillInquiry")
+                   // .header("Authorization",)
                     .post(requestBody)
                     .build();
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     call.cancel();
+                    Toast.makeText(GhabzActivity.this,"please try again",Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -84,6 +92,7 @@ public class GhabzActivity extends AppCompatActivity {
 
                     } catch (Exception e) {
                         String error = e.getMessage();
+
                     }
                 }
             });
