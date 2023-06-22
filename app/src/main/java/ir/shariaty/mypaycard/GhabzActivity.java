@@ -76,7 +76,12 @@ public class GhabzActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Call call, @NonNull IOException e) {
                     call.cancel();
-                    Toast.makeText(GhabzActivity.this,"please try again",Toast.LENGTH_SHORT).show();
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(GhabzActivity.this, "خطا در دریافت اطلاعات", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    //Toast.makeText(GhabzActivity.this,"please try again",Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -90,6 +95,7 @@ public class GhabzActivity extends AppCompatActivity {
                         MidPaytId=jsonObject.getJSONObject("data").getJSONObject("MidTerm").getString("PaymentID");
 
                         load(EndAmount,MidAmount,EndPaytId,MidPaytId);
+                        progress(false);
 
                     } catch (Exception e) {
                         String error = e.getMessage();
@@ -110,7 +116,7 @@ public class GhabzActivity extends AppCompatActivity {
                     binding.lblMidPaytId.setVisibility(View.VISIBLE);
                     binding.lblaMidTerm.setVisibility(View.VISIBLE);
                     binding.lblEndTerm.setVisibility(View.VISIBLE);
-                    binding.lblPaymenTerm.setVisibility(View.VISIBLE);
+                   // binding.lblPaymenTerm.setVisibility(View.VISIBLE);
                     binding.lblPaymentMid.setVisibility(View.VISIBLE);
                 }
 

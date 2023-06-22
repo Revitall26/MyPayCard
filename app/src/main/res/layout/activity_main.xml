@@ -29,15 +29,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:srcCompat="@drawable/imgirancell" />
+        app:srcCompat="@drawable/img" />
 
     <ImageView
         android:id="@+id/img2"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="144dp"
         app:layout_constraintEnd_toStartOf="@+id/img1"
-        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/img3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_4" />
