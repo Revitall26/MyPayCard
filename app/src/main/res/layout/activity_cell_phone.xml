@@ -26,7 +26,7 @@
         android:id="@+id/tvMablaq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="364dp"
         android:text="مبلغ مورد نظر را وارد کنید."
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -76,21 +76,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rdcell1"
             android:layout_width="141dp"
             android:layout_height="wrap_content"
             android:text="همراه اول "
             android:textAlignment="center" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rdcell2"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:text="ایرانسل"
             android:textAlignment="center" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rdcell3"
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:text="رایتل"
@@ -99,8 +99,8 @@
 
 
     <RadioGroup
-        android:layout_width="428dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textAlignment="textStart"
         android:textDirection="rtl"
@@ -114,7 +114,7 @@
 
         <RadioButton
             android:id="@+id/rd5000"
-            android:layout_width="97dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="5000t"
@@ -122,7 +122,7 @@
 
         <RadioButton
             android:id="@+id/rd10000"
-            android:layout_width="106dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="10000t"
@@ -130,7 +130,7 @@
 
         <RadioButton
             android:id="@+id/rd15000"
-            android:layout_width="116dp"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="15000t"
@@ -138,7 +138,7 @@
 
         <RadioButton
             android:id="@+id/rd20000"
-            android:layout_width="100dp"
+            android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="20000t"
@@ -147,8 +147,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="289dp"
-        android:layout_height="192dp"
+        android:layout_width="233dp"
+        android:layout_height="131dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,4 +158,15 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnCharge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2D29A6"
+        android:text="خرید"
+        app:layout_constraintBottom_toTopOf="@+id/animation_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
