@@ -57,6 +57,7 @@ public class GhabzActivity extends AppCompatActivity {
         });
     }
         private void callAPI(String landlineNo) {
+            progress(true);
             JSONObject object = new JSONObject();
 
             try {
@@ -98,7 +99,26 @@ public class GhabzActivity extends AppCompatActivity {
             });
         }
 
-        private void load(Integer endTermAmount, Integer midTermAmount, String endTermPaymentId, String midTermPaymentId) {
+    private void progress(boolean Progress) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (Progress){
+                   binding.lblEndAmount.setVisibility(View.VISIBLE);
+                    binding.lblMidAmount.setVisibility(View.VISIBLE);
+                    binding.lblEndPaytId.setVisibility(View.VISIBLE);
+                    binding.lblMidPaytId.setVisibility(View.VISIBLE);
+                    binding.lblaMidTerm.setVisibility(View.VISIBLE);
+                    binding.lblEndTerm.setVisibility(View.VISIBLE);
+                    binding.lblPaymenTerm.setVisibility(View.VISIBLE);
+                    binding.lblPaymentMid.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+    }
+
+    private void load(Integer endTermAmount, Integer midTermAmount, String endTermPaymentId, String midTermPaymentId) {
             binding.lblEndAmount.setText(endTermAmount+" ریال");
             binding.lblMidAmount.setText(midTermAmount+" ریال");
             binding.lblEndPaytId.setText(endTermPaymentId);
